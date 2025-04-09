@@ -1,0 +1,15 @@
+<mat-toolbar>
+  <button mat-icon-button (click)="toggleNavbarCollapsed()">
+    <mat-icon>menu</mat-icon>
+  </button>
+</mat-toolbar>
+<mat-sidenav-container>
+  <!-- Sidenav -->
+  <mat-sidenav opened mode="side" [style.width]="sidenavWidth()">
+    <app-sidenav-menu [collapsed]="navbarCollapsed()"/>
+  </mat-sidenav>
+  <!-- Content -->
+  <mat-sidenav-content class="app-content" [style.margin-left]="sidenavWidth()">
+    <router-outlet />
+  </mat-sidenav-content>
+</mat-sidenav-container>

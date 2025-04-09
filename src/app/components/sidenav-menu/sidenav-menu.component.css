@@ -1,0 +1,36 @@
+.app-sidenav-content {
+  /*padding: 8px;*/
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+}
+
+.app-sidenav-header {
+  /*padding: 8px;*/
+}
+
+.app-sidenav-footer {
+  /*padding: 8px;*/
+}
+
+.app-sidenav-user {
+  text-align: center;
+}
+
+.app-sidenav-user h3 {
+  margin: 0;
+  font-size: 1rem;
+  line-height: 1.5rem;
+}
+
+.app-sidenav-user p {
+  margin: 0;
+  font-size: 0.8rem;
+}
+
+.app-sidenav-user img {
+  margin-bottom: 10px;
+  border-radius: 100%;
+  object-fit: cover;
+}

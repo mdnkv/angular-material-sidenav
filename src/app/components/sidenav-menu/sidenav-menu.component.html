@@ -1,0 +1,43 @@
+<div class="app-sidenav-content">
+  <div class="app-sidenav-header">
+    <div class="app-block">
+      <div class="app-sidenav-user">
+        <img alt="John Doe" [style.height]="avatarWidth()" [style.width]="avatarWidth()" src="https://i.pravatar.cc/300">
+        @if (!collapsed()){
+          <h3>John Doe</h3>
+          <p>My organization</p>
+        }
+      </div>
+    </div>
+    <div class="app-block">
+
+      <!-- Material list -->
+      <mat-nav-list>
+        @for (item of menuItems(); track item.route){
+          <a
+            mat-list-item
+            routerLinkActive
+            #active=routerLinkActive
+            [activated]="active.isActive"
+            [routerLink]="item.route">
+            <mat-icon matListItemIcon>{{item.icon}}</mat-icon>
+            @if (!collapsed()){
+              <span matListItemTitle>{{item.label}}</span>
+            }
+          </a>
+        }
+      </mat-nav-list>
+
+    </div>
+  </div>
+  <div class="app-sidenav-footer">
+    <mat-nav-list>
+      <a mat-list-item>
+        <mat-icon matListItemIcon>logout</mat-icon>
+        @if (!collapsed()){
+          <span matListItemTitle>Logout</span>
+        }
+      </a>
+    </mat-nav-list>
+  </div>
+</div>
