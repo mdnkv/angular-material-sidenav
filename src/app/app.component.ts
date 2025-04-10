@@ -22,10 +22,21 @@ export class AppComponent {
 
   sidenavWidth = computed(() => {
     if (this.navbarCollapsed()){
-      return '65px'
+      if (window.innerWidth <= 768){
+        return '0'
+      } else {
+        return '65px'
+      }
     } else {
       return '250px'
     }
   })
+
+  constructor() {
+    if (window.innerWidth <= 768){
+      // if mobile, then the sidebar is collapsed by default
+      this.navbarCollapsed.set(true)
+    }
+  }
 
 }
